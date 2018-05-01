@@ -1,0 +1,30 @@
+<VirtualHost *:80>
+
+ServerName test.rohin.est
+DocumentRoot "/var/www/vhosts/test/"
+
+#Alias "/images" "/home/tester/funny-pictures/"
+
+#<Directory /home/tester/funny-pictures/>
+ #       Require all granted
+#</Directory>
+CustomLog ${APACHE_LOG_DIR}/test-access.log combined
+LogLevel debug
+
+</VirtualHost>
+
+
+<VirtualHost *:80>
+
+ServerName test.rohin.est
+DocumentRoot "/var/www/vhosts/test/"
+
+Alias "/images" "/home/tester/funny-pictures/"
+
+<Directory /home/tester/funny-pictures/>
+        Require all granted
+</Directory>
+CustomLog ${APACHE_LOG_DIR}/test-access.log combined
+LogLevel debug
+
+</VirtualHost>

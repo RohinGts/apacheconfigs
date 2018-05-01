@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+
+ServerName webmail.rohin.est
+DocumentRoot "/var/lib/roundcube/"
+SSLEngine on
+SSLCertificateFile /etc/ssl/certs/ss
+SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+CustomLog ${APACHE_LOG_DIR}/webmail-access.log combined
+LogLevel debug
+#DocumentRoot /var/lib/roundcube
+Include conf-available/roundcube.conf 
+
+</VirtualHost>

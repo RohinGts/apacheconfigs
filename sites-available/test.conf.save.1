@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+
+ServerName test.rohin.est
+DocumentRoot "/var/www/vhosts/test/"
+
+Alias /images/ "/home/tester/funny-pictures/"
+
+<Directory "/home/tester/funny-pictures/">
+<Files "cyber_city.png">
+        Require all granted
+
+    </Files>
+</Directory>
+
+CustomLog ${APACHE_LOG_DIR}/test-access.log combined
+LogLevel debug
+
+</VirtualHost>
+
